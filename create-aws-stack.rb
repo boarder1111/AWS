@@ -106,7 +106,7 @@ outputs = Outputs.new
 Json_file.new(outputs.outputs_hash, ec2.ec2_hash, options_hash['nr_instances'], sec_group.sec_group_hash)
 
 # Create AWS stack
-creds = JSON.load(File.read('key.json'))
+creds = JSON.load(File.read('../key.json'))
 Aws.config[:credentials] = Aws::Credentials.new(creds['AccessKeyId'], creds['SecretKey'])
 Aws.config.update({
                       region: 'eu-west-1'
